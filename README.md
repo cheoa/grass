@@ -14,6 +14,7 @@ Cheapest [proxies and servers](https://teletype.in/@web3enjoyer/4a2G9NuHssy) whi
    - Create Accounts
    - Farm Points
    - Check Points
+   - Approve Emails without access to it (no need imap, etc)
 
 > You can put as many proxies as u can, bot uses database and will load up proxies from extra ones
 
@@ -28,6 +29,7 @@ Cheapest [proxies and servers](https://teletype.in/@web3enjoyer/4a2G9NuHssy) whi
 
 1. CREATE ACCOUNTS:
  - In `data/config.py` put `REGISTER_ACCOUNT_ONLY = True`
+ - Throw the api key into `data/config.py`. Since there is a captcha there, you need a service for solving captchas - [AntiCaptcha](http://getcaptchasolution.com/t8yfysqmh3) or [Twocaptcha](https://2captcha.com/?from=12939391).
  - Provide emails and passwords (OPTIONAL) and proxies to register accounts as below!
 
   ![image](https://github.com/MsLolita/grass/assets/58307006/67740c9b-07d6-4f78-a87d-27b09c0303e8)
@@ -35,6 +37,11 @@ Cheapest [proxies and servers](https://teletype.in/@web3enjoyer/4a2G9NuHssy) whi
 2. FARM POINTS:
  - in `data/config.py` put `REGISTER_ACCOUNT_ONLY = False`
  - Provide emails and passwords and proxies to register accounts as shown below!
+
+3. APPROVE EMAILS:
+ - in `data/config.py` put `APPROVE_EMAIL_ONLY = True`
+ - Provide emails and passwords and proxies as always (as shown below)!
+ - No imap or email access required.
 
 ### Configuration 📧
 
