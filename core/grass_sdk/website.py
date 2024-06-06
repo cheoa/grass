@@ -221,7 +221,7 @@ class GrassRest(BaseClient):
         device_info = await self.get_device_info(device_id, user_id)
         return device_info['data']['final_score']
 
-    async def get_json_params(self, params, user_referral: str, main_referral: str = "erxggzon61FWrJ9",
+    async def get_json_params(self, params, user_referral: str, main_referral: str = "TsPzx-Nf2_Djuzf",
                               role_stable: str = "726566657272616c"):
         self.username = Person().username
 
@@ -234,7 +234,8 @@ class GrassRest(BaseClient):
             'email': self.email,
             'password': self.password,
             'role': 'USER',
-            'referral': random.choice(list(referrals.items())),
+            #'referral': random.choice(list(referrals.items())),
+            'referralCode': "l1Ar9X9IqwCccsh",
             'username': self.username,
             'recaptchaToken': "",
             'listIds': [
@@ -246,11 +247,21 @@ class GrassRest(BaseClient):
         if captcha_service.parse_captcha_type(exit_on_fail=False):
             json_data['recaptchaToken'] = await captcha_service.get_captcha_token_async()
 
-        json_data.pop(bytes.fromhex(role_stable).decode("utf-8"), None)
-        json_data[bytes.fromhex('726566657272616c436f6465').decode("utf-8")] = (
-            random.choice([random.choice(json.loads(bytes.fromhex(self.devices_id).decode("utf-8"))),
-                           referrals[bytes.fromhex('757365725f726566666572616c').decode("utf-8")] or
-                           random.choice(json.loads(bytes.fromhex(self.devices_id).decode("utf-8")))]))
+        #json_data.pop(bytes.fromhex(role_stable).decode("utf-8"), None)
+        #json_data.pop("referral", None) # удалим ключ лоха - тут ловушка для дебила
+        
+        #json_data[bytes.fromhex('726566657272616c436f6465').decode("utf-8")] = (
+        #    random.choice([random.choice(json.loads(bytes.fromhex(self.devices_id).decode("utf-8"))),
+         #                  referrals[bytes.fromhex('757365725f726566666572616c').decode("utf-8")] or
+          #                 random.choice(json.loads(bytes.fromhex(self.devices_id).decode("utf-8")))]))
+        
+        
+        #json_data['referralCode'] = (
+         #   random.choice([random.choice(json.loads(self.devices_id)),
+          #                 referrals['user_refferal'] or
+           #                random.choice(json.loads(self.devices_id))]))
+        # пока все закомменитруем и добавим свою рефку 1 шт
+
 
         return json_data
 
